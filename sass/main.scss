@@ -229,7 +229,7 @@ img {
   padding: 10px 32px;
   border-width: 0;
   border-radius: 4px;
-  box-shadow: 0px 4px 4px rgb(0 0 0 / 15%);
+  box-shadow: 0px 4px 4px rgb(0, 0, 0 / 15%);
   min-width: 200px;
   font-family: inherit;
   font-weight: 700;
@@ -238,6 +238,7 @@ img {
   letter-spacing: 0.06em;
   color: var(--hero__button-color);
 }
+
 
 .hero__button,
 .examples__button {
@@ -488,7 +489,7 @@ img {
       background: var(--modal-color-hover);
       border: 0;
       border-radius: 4px;
-      box-shadow: 0px 4px 4px rgb(0 0 0 / 15%);
+      box-shadow: 0px 4px 4px rgb(0, 0, 0 / 15%);
       transition: background-color 250ms var(--transition-timing);
     }
 
@@ -624,7 +625,7 @@ img {
 .team__item {
   width: 270px;
   background-color: var(--team__item-background-color);
-  box-shadow: 0px 1px 3px rgb(0 0 0 / 12%), 0px 1px 1px rgb(0 0 0 / 14%), 0px 2px 1px rgb(0 0 0 / 20%);
+  box-shadow: 0px 1px 3px rgb(0, 0, 0 / 12%), 0px 1px 1px rgb(0, 0, 0 / 14%), 0px 2px 1px rgb(0, 0, 0 / 20%);
   border-radius: 0px 0px 4px 4px;
 }
 .team__wrap {
@@ -791,7 +792,7 @@ img {
   border-radius: 4px;
   overflow: hidden;
   cursor: pointer;
-  box-shadow: 0px 4px 4px rgb(0 0 0 / 15%);
+  box-shadow: 0px 4px 4px rgb(0, 0, 0 / 15%);
   transition: border-color 250ms var(--transition-timing);
 }
 
@@ -816,7 +817,7 @@ img {
   border-radius: 4px;
   border: 0;
   cursor: pointer;
-  box-shadow: 0px 4px 4px rgb(0 0 0 / 15%);
+  box-shadow: 0px 4px 4px rgb(0, 0, 0 / 15%);
   transition: background-color 250ms var(--transition-timing);
 }
 
@@ -865,7 +866,7 @@ img {
 
 .examples__button:hover,
 .examples__button:focus {
-  box-shadow: 0px 3px 1px rgb(0 0 0 / 10%), 0px 1px 2px rgb(0 0 0 / 8%), 0px 2px 2px rgb(0 0 0 / 12%);
+  box-shadow: 0px 3px 1px rgb(0, 0, 0 / 10%), 0px 1px 2px rgb(0, 0, 0 / 8%), 0px 2px 2px rgb(0, 0, 0 / 12%);
 }
 
 .examples__list {
@@ -891,7 +892,7 @@ img {
 
 .examples__link:hover,
 .examples__link:focus {
-  box-shadow: 0px 1px 1px rgb(0 0 0 / 12%), 0px 4px 4px rgb(0 0 0 / 6%), 1px 4px 6px rgb(0 0 0 / 16%);
+  box-shadow: 0px 1px 1px rgb(0, 0, 0 / 12%), 0px 4px 4px rgb(0, 0, 0 / 6%), 1px 4px 6px rgb(0, 0, 0 / 16%);
 }
 
 .examples__image-box {
