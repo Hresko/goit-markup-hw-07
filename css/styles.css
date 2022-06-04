@@ -6,25 +6,43 @@
   --background-color-hover: rgba(33,150,243,1);
   --color-hover: rgba(33,150,243,1);
   --button-background-color-normal:rgba(245, 244, 250, 1);
-  --logo-color:rgba(33,33,33,1);
+  --logo-color-header:rgba(33,33,33,1);
   --logo-accent-color:rgba(33,150,243,1);
   --hero-background-color: rgba(47,48,58,1);
   --site-nav-color:rgba(33,33,33,1);
-  --hero-title-color: rgba(255,255,255,1);
-  --hero-button-color: rgba(245,244,250,1);
+  --hero__title-color: rgba(255,255,255,1);
+  --hero__button-color: rgba(245,244,250,1);
+
+
+
+/* occupation*/
+
+--occupation__text-background-color: rgba(47, 48, 58, 0.8);
+--occupation__text-color: rgba(255, 255, 255, 1);
+
+/* team */
+--team-background-color:rgba(245,244,250,1);
+
+
+
+/* Всяке */
   --button-hover-color:rgba(255,255,255,1);
-  --team-background-color:rgba(245,244,250,1);
   --footer-background-color:rgba(47,48,58,1);
   --current-color:rgba(33,150,243,1);
   --footer-logo-color: rgba(255,255,255,1);
   --street-address-color:rgba(255,255,255,1);
   --examples-button-background-color:rgba(245,244,250,1);
   --examples-border: rgba(238, 238, 238, 1);
+  --examples-second-laer-color: rgba(255, 255, 255, 1);
+  --examples-second-laer-background-color: rgba(33, 150, 243, 0.9);
   --header-border:rgba(236, 236, 236, 1);
   --icon-color: rgba(175, 177, 184, 1);
   --icon-hover-color: rgba(255, 255, 255, 1);
   --transition-timing: cubic-bezier(0.4, 0, 0.2, 1);
+  --close-button-color: rgba(0, 0, 0, 1);
+  --form-border: rgba(33, 33, 33, 0.2);
   --backdrop-background-color: rgba(0, 0, 0, 0.2);
+  --footer-subscribe-color: rgba(255,255,255,1);
 }
 /* Тіло */
 body {
@@ -58,49 +76,48 @@ img {
   padding-right: 15px;
   margin: 0px auto;
 }
-.list-general {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-.page-header {
+
+.header {
   border-bottom: 1px solid var(--header-border);
 }
-.flex-header,
-.site-nav,
-.nav-flex {
+.header__container,
+.site-nav__list {
   display: flex;
   justify-content:center;
+  align-items: center ;
 }
 
 address {
   font-style: normal;
 }
-
 .logo {
-  display: block;
-  padding-top: 25px;
-  padding-bottom: 24px;
-  margin-right: 93px;
-  text-decoration: none;
+  display:block;
   font-family: 'Raleway', sans-serif;
   font-weight: 700;
   font-size: 26px;
   line-height: 1.19;
-  color: var(--logo-color);
+  letter-spacing: 0.03em;
+  text-decoration: none;
 }
-.logo-accent {
+.logo--header {
+  padding-top: 25px;
+  padding-bottom: 24px;
+  margin-right: 93px;
+  color: var(--logo-color-header);
+}
+
+.logo__accent {
   color: var(--logo-accent-color);
 }
 
-.site-nav .link,
+.site-nav__link,
 .header-contacts .link {
   display: block;
   text-align: center;
   padding-top: 32px;
   padding-bottom: 32px;
 }
-.site-nav li:not(:last-child),
+.site-nav__list li:not(:last-child),
 .header-contacts li:not(:last-child) {
   margin-right: 50px;
 }
@@ -112,28 +129,28 @@ address {
   margin-left: auto;
 }
 
-.site-nav .link,
-.header-contacts .link {
+.site-nav__link,
+.header-contacts__link {
   font-weight: 500;
   font-size: 14px;
   line-height: 1.14;
   letter-spacing: 0.02em;
   text-decoration: none;
 }
-.site-nav .link {
+.site-nav__link {
   color: var(--site-nav-color);
   transition: color 250ms var(--transition-timing);
 }
-.header-contacts .link {
+.header-contacts__link {
   color: inherit;
   transition: color 250ms var(--transition-timing);
 }
 
 
-.site-nav .link:hover,
-.site-nav .link:focus,
-.header-contacts .link:hover,
-.header-contacts .link:focus,
+.site-nav__link:hover,
+.site-nav__link:focus,
+.header-contacts__link:hover,
+.header-contacts__link:focus,
 .footer-contacts .link:hover,
 .footer-contacts .link:focus,
 .street-address:hover,
@@ -146,12 +163,12 @@ address {
   fill: currentColor;
 }
 
-.site-nav>li .current {
+.site-nav__link--current {
   color: var(--current-color);
   position: relative;
 }
 
-.site-nav>li .current::after {
+.site-nav__link--current::after {
   content: '';
   position: absolute;
   left: 0;
@@ -176,7 +193,7 @@ address {
   padding: 200px 0px;
 
 }
-.hero-title {
+.hero__title {
   margin-top: 0;
   margin-bottom: 30px;
   font-weight: 900;
@@ -184,10 +201,10 @@ address {
   line-height: 1.36;
   letter-spacing: 0.06em;
   text-transform: uppercase;
-  color: var(--hero-title-color)
+  color: var(--hero__title-color)
 }
 
-.hero-button {
+.hero__button {
   padding: 10px 32px;
   border-width: 0;
   border-radius: 4px;
@@ -198,10 +215,10 @@ address {
   font-size: 16px;
   line-height: 1.87;
   letter-spacing: 0.06em;
-  color: var(--hero-button-color);
+  color: var(--hero__button-color);
 }
 
-.hero-button,
+.hero__button,
 .examples-button {
   color: var(--title-text-color);
   background-color: var(--button-background-color-normal);
@@ -209,10 +226,10 @@ address {
   transition: color 250ms var(--transition-timing), background-color 250ms var(--transition-timing);
 }
 
-.hero-button:hover,
+.hero__button:hover,
 .examples-button:hover,
-.hero-button:focus,
-.examples-button:focus {
+.hero__button:focus,
+.examples__button:focus {
   color: var(--button-hover-color);
   background-color: var(--background-color-hover);
 }
@@ -265,9 +282,9 @@ address {
     width: 30px;
     height: 30px;
 
-    color: rgba(0, 0, 0, 1);
+    color: var(--close-button-color);
     background-color: var(--primary-background-color);
-    border: 1px solid rgba(0, 0, 0, 0.1);
+    border: 1px solid var(--close-button-);
     border-radius: 50%;
     cursor: pointer;
     transition: color 250ms var(--transition-timing);
@@ -328,7 +345,7 @@ address {
     .form-input,
     .form-comment{
       color: var(--title-text-color);
-      border: 1px solid rgba(33, 33, 33, 0.2);
+      border: 1px solid var(--form-border);
       border-radius: 4px;
       transition: border-color 250ms var(--transition-timing);
       cursor: pointer;
@@ -461,17 +478,23 @@ address {
     }
 /* Наші переваги */
 
-.preference-all,
-.occupation-all,
-.team-all,
+.preference,
+.occupation,
+.team,
 .clients-section {
   padding: 94px 0px;
 }
-.preference-list {
+.preference__list {
   display: flex;
+  justify-content: center;
+  align-items: center;
 }
-
-.preference,
+/* 
+================
+==Приховування==  
+================
+*/
+.preference__title,
 .examples {
   position: absolute; 
   width: 1px; 
@@ -484,16 +507,15 @@ address {
   clip: rect(0 0 0 0); 
   overflow: hidden; 
 }
-.preference-list .preference-item {
+.preference__item {
   width: 270px;
 }
-.preference-list li:not(:last-child) {
+.preference__item:not(:last-child) {
  margin-right: 30px;
 }
 
 
-
-.icon-background {
+.preference__icon {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -503,7 +525,7 @@ address {
   background-color: rgba(245, 244, 250, 1);
 } 
 
-.title-preference {
+.preference__description-title {
   margin-bottom: 10px;
   text-transform: uppercase;
   color: var(--title-text-color);
@@ -511,9 +533,9 @@ address {
   font-size: 14px;
   line-height: 1.14;
   letter-spacing: 0.03em;
-
 }
-.text-preference {
+
+.preference__description-text {
   font-size: 14px;
   line-height: 1.71;
   letter-spacing: 0.03em;
@@ -522,21 +544,24 @@ address {
 
 
 /* Чим ми займаємось */
-.occupation-all { 
+.occupation { 
   padding-top: 0;
 }
-.occupation-list {
+.occupation__list {
   display: flex;
-}
-.occupation-box:not(:nth-child(3n)) {
-  margin-right: 30px;
+  justify-content: center;
+  align-items: center;
 }
 
-.occupation-box {
+.occupation__item {
   position: relative;
 } 
 
-.occupation-text { 
+.occupation__item:not(:nth-child(3n)) {
+  margin-right: 30px;
+}
+
+.occupation__text { 
   position: absolute;
   bottom: 0;
   left: 0;
@@ -544,17 +569,19 @@ address {
   display: block;
   padding: 27px 40px;
   margin: 0;
-  background-color: rgba(47, 48, 58, 0.8);
+  background-color: var(--occupation__text-background-color);
   font-weight: 700;
   font-size: 14px;
   line-height: 1.14;
   text-align: center;
   letter-spacing: 0.03em;
   text-transform: uppercase;
-  color: rgba(255, 255, 255, 1);
+  color: var(--occupation__text-color);
 }
+
+
 /* Наша команда */
-.team-all {
+.team {
   background-color: var(--team-background-color);
 }
 
@@ -662,8 +689,8 @@ address {
 }
 .clients-link:hover,
 .clients-link:focus {
-  border: 1px solid rgba(33, 150, 243, 1);
-  color: rgba(33, 150, 243, 1);
+  border: 1px solid var(--logo-accent-color);
+  color: var(--logo-accent-color);
 }
 
 .clients-link {
@@ -693,8 +720,7 @@ address {
   font-weight: 700;
   line-height: 16px;
   text-transform: uppercase;
-  color: rgba(255, 255, 255, 1);
-  ;
+  color: var(--footer-subscribe-color)
 }
 
 .footer-social-list {
@@ -715,15 +741,8 @@ address {
   background-color: var(--background-color-hover);
 }
 
-.footer-logo {
-  display: inline-block;
+.logo--footer {
   margin-bottom: 20px;
-  font-family: 'Raleway', sans-serif;
-  font-weight: 700;
-  font-size: 26px;
-  line-height: 1.19;
-  letter-spacing: 0.03em;
-  text-decoration: none;
   color: var(--footer-logo-color);
 }
 
@@ -768,7 +787,7 @@ address {
   padding: 15px 16px;
   font-size: 16px;
   line-height: 1.25;
-  color: rgba(255, 255, 255, 1);
+  color: var(--footer-subscribe-color);
   background-color: inherit;
   border: 1px solid rgba(255, 255, 255, 0.3);
   border-radius: 4px;
@@ -780,7 +799,7 @@ address {
 
 .footer-subscribe-email:focus,
 .footer-subscribe-email:hover {
-  border-color: rgba(255, 255, 255, 1);
+  border-color: var(--footer-subscribe-color);
   overflow: hidden;
 }
 
@@ -794,7 +813,7 @@ address {
   font-size: 16px;
   line-height: 1.87;
   letter-spacing: 0.06em;
-  color: rgba(255, 255, 255, 1);
+  color: var(--footer-subscribe-color);
   background-color: var(--background-color-hover);
   border-radius: 4px;
   border: 0;
@@ -907,13 +926,13 @@ address {
   top: 0;
   left: 0;
   padding: 63px 24px;
-  background-color: rgba(33, 150, 243, 0.9);
+  background-color: var(--examples-second-laer-background-color);
   opacity: 0;
   font-size: 18px;
   font-weight: 400;
   line-height: 1.55;
   letter-spacing: 0.03em;
-  color: rgba(255, 255, 255, 1);
+  color: var(--examples-second-laer-color);
   transform: translateY(100%);
   transition: transform 250ms var(--transition-timing), opacity 250ms var(--transition-timing);
 }
