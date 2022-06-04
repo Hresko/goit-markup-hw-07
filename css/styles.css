@@ -1,18 +1,34 @@
 /* Змінні кольори */
 :root {
+  /* Загальні */
   --primary-background-color: rgba(255,255,255,1);
   --primary-tex-color: rgba(117,117,117,1);
-  --title-general-text-color: rgba(33,33,33,1);
-  --color-hover: rgba(33,150,243,1);
+  --title-text-color: rgba(33, 33, 33, 1);
   --button-background-color-normal:rgba(245, 244, 250, 1);
+  --button-color-hover:rgba(255,255,255,1);
+
+  /* Хеадер */
+  --header-border-color:rgba(236, 236, 236, 1);
   --logo-color-header:rgba(33,33,33,1);
   --logo-accent-color:rgba(33,150,243,1);
-  --hero-background-color: rgba(47,48,58,1);
   --site-nav-color:rgba(33,33,33,1);
+  --site-nav__link--current-color:rgba(33,150,243,1);
+  --header-color-hover: rgba(33,150,243,1);
+
+/* Герой */
+  --hero-background-color: rgba(47,48,58,1);
   --hero__title-color: rgba(255,255,255,1);
   --hero__button-color: rgba(245,244,250,1);
 
-
+  /* Модальне вікно */
+  --backdrop-background-color: rgba(0, 0, 0, 0.2);
+  --modal__close-button-color: rgba(0, 0, 0, 1); ;
+  --modal__close-button-border-color: rgba(0, 0, 0, 0.1);
+  --modal-color-hover: rgba(33,150,243,1);
+  --checkbox__icon-checked: rgba(255, 255, 255, 1);
+  --checkbox__icon-unchecked-border-color: rgba(33, 33, 33, 1);
+  --form__button-submit-color-hover: rgba(24, 140, 232, 1);
+  --form-border-color: rgba(33, 33, 33, 0.2);
 
 /* occupation*/
 
@@ -30,9 +46,9 @@
 --clients-link-color:rgba(175, 177, 184, 1);
 --clients-link-color-hover: rgba(33,150,243,1);
 
-
 /* Footer */
   --footer-background-color:rgba(47,48,58,1);
+  --logo--footer-color: rgba(255,255,255,1);
   --address__link-color:rgba(255,255,255,1);
   --footer-titles-color: rgba(255,255,255,1);
   --social-links__link--footer-background-color: rgb(255, 255, 255, 10%);
@@ -44,25 +60,17 @@
   --footer-subscribe__button-color: rgba(255, 255, 255, 1) ;
   --footer-subscribe__button-background-color: rgba(33, 150, 243, 1) ;
   --footer-subscribe__button-background-color-hover: rgba(24, 140, 232, 1) ;
+
+  /* Портфоліо */
+  --examples__button-background-color:rgba(245,244,250,1);
+  --examples__second-laer-color: rgba(255, 255, 255, 1);
+  --examples__second-laer-background-color: rgba(33, 150, 243, 0.9);
+  --examples__text-box-border: rgba(238, 238, 238, 1);
+
 /* Всяке */
-  --button-hover-color:rgba(255,255,255,1);
-  --current-color:rgba(33,150,243,1);
-  --footer-logo-color: rgba(255,255,255,1);
-  --examples-button-background-color:rgba(245,244,250,1);
-  --examples-border: rgba(238, 238, 238, 1);
-  --examples-second-laer-color: rgba(255, 255, 255, 1);
-  --examples-second-laer-background-color: rgba(33, 150, 243, 0.9);
-  --header-border:rgba(236, 236, 236, 1);
   --transition-timing: cubic-bezier(0.4, 0, 0.2, 1);
-  --close-button-color: rgba(0, 0, 0, 1);
-  --form-border: rgba(33, 33, 33, 0.2);
-  --backdrop-background-color: rgba(0, 0, 0, 0.2);
-/* Відклав*/
-  --icon-color: rgba(175, 177, 184, 1);
-  --icon-hover-color: rgba(255, 255, 255, 1);
-  --background-color-hover: rgba(33,150,243,1);
 }
-/* Тіло */
+
 body {
   font-family: 'Roboto', sans-serif;
   font-size: 14px;
@@ -96,7 +104,7 @@ img {
 }
 
 .header {
-  border-bottom: 1px solid var(--header-border);
+  border-bottom: 1px solid var(--header-border-color);
 }
 .header__container,
 .site-nav__list {
@@ -168,7 +176,7 @@ img {
 .header-contacts__link:focus,
 .address__link:hover,
 .address__link:focus {
-  color: var(--background-color-hover);
+  color: var(--header-color-hover);
 }
 
 .contacts-icon {
@@ -177,7 +185,7 @@ img {
 }
 
 .site-nav__link--current {
-  color: var(--current-color);
+  color: var(--site-nav__link--current-color);
   position: relative;
 }
 
@@ -190,7 +198,7 @@ img {
   width: 100%;
   height: 4px;
   border-radius: 2px;
-  background-color: var(--background-color-hover)
+  background-color: var(--header-color-hover)
 }
 
 .hero {
@@ -232,7 +240,7 @@ img {
 }
 
 .hero__button,
-.examples-button {
+.examples__button {
   color: var(--title-text-color);
   background-color: var(--button-background-color-normal);
   cursor: pointer;
@@ -240,12 +248,13 @@ img {
 }
 
 .hero__button:hover,
-.examples-button:hover,
+.examples__button:hover,
 .hero__button:focus,
 .examples__button:focus {
-  color: var(--button-hover-color);
-  background-color: var(--background-color-hover);
+  color: var(--button-color-hover);
+  background-color: var(--header-color-hover);
 }
+
 
 /* Модальне вікно */
   .backdrop {
@@ -259,7 +268,7 @@ img {
     transition: opacity 250ms var(--transition-timing), visibility 250ms var(--transition-timing);
   }
   
-  .backdrop.is-hidden {
+  .is-hidden {
     opacity: 0;
     pointer-events: none;
     visibility: hidden;
@@ -282,7 +291,7 @@ img {
       transform 250ms var(--transition-timing);
   }
 
-  .close-button {
+  .modal__close-button {
     position: absolute;
     top: 8px;
     right: 8px;
@@ -295,24 +304,24 @@ img {
     width: 30px;
     height: 30px;
 
-    color: var(--close-button-color);
+    color: var(--modal__close-button-color);
     background-color: var(--primary-background-color);
-    border: 1px solid var(--close-button-);
+    border: 1px solid var(--modal__close-button-border-color);
     border-radius: 50%;
     cursor: pointer;
     transition: color 250ms var(--transition-timing);
     }
     
-    .close-button:hover,
-    .close-button:focus {
-      color: var(--color-hover);
+    .modal__close-button:hover,
+    .modal__close-button:focus {
+      color: var(--modal-color-hover);
     }
   
-    .close-button-icon {
+    .modal__close-button-icon {
       fill: currentColor;
     }
 
-    .modal-title {
+    .modal__title {
       display: flex;
       justify-content: center;
       text-align: center;
@@ -323,18 +332,17 @@ img {
       color: var(--title-text-color);
     }
 
-    .contact-form {
+    .form {
       text-align: center;
     }
 
-    .form-field {
+    .form__field {
       display: block;
       margin-bottom: 10px;
       text-align: left;
     }
 
-
-    .form-label {
+    .form__label {
       display: inline-block;
       margin-bottom: 4px;
       font-size: 12px;
@@ -343,40 +351,40 @@ img {
       cursor: pointer;
     }
 
-    .form-input-block {
+    .form__input-block {
       position: relative;
       display: block;
     }
 
-    .form-input {
+    .form__input {
       display: flex;
       width: 100%;
       height: 40px;
       padding: 12px;
       padding-left: 42px;
     }
-    .form-input,
-    .form-comment{
+    .form__input,
+    .form__comment{
       color: var(--title-text-color);
-      border: 1px solid var(--form-border);
+      border: 1px solid var(--form-border-color);
       border-radius: 4px;
       transition: border-color 250ms var(--transition-timing);
       cursor: pointer;
     }
-    .form-input-block:hover .form-input,
-    .form-input-block:focus .form-input,
-    .form-comment:hover,
-    .form-comment:focus,
-    .form-input:focus-within  {
-      border-color: var(--color-hover);
+    .form__input-block:hover .form__input,
+    .form__input-block:focus .form__input,
+    .form__comment:hover,
+    .form__comment:focus,
+    .form__input:focus-within  {
+      border-color: var(--modal-color-hover);
       outline: 0;
     }
 
-    .form-input-block:focus-within .form-icon {
-      color: var(--color-hover);
+    .form__input-block:focus-within .form__icon {
+      color: var(--modal-color-hover);
     }
 
-    .form-icon {
+    .form__icon {
       position: absolute;
       top: 50%;
       left: 12px;
@@ -390,7 +398,7 @@ img {
       margin-bottom: 20px;
     }
     
-    .form-comment {
+    .form__comment {
       display: flex;
       width: 100%;
       height: 120px;
@@ -399,18 +407,18 @@ img {
       overflow:auto;
     }
 
-    .form-checkbox {
+    .checkbox {
       display: flex;
       justify-content: center;
       align-items: center;
       margin-bottom: 30px;
     }
 
-    .form-checkbox:hover .checkbox-icon-unchecked,
-    .form-checkbox:focus .checkbox-icon-unchecked {
-      border-color: rgba(33, 150, 243, 1);
+    .checkbox:hover .checkbox__icon-unchecked,
+    .checkbox:focus .checkbox__icon-unchecked {
+      border-color: var(--modal-color-hover);
     }
-    .checkbox-container {
+    .checkbox__container {
       position: relative;
       display: block;
       width: 16px;
@@ -419,7 +427,7 @@ img {
       cursor: pointer;
     }
 
-    .checkbox {
+    .checkbox__input {
       position: absolute;
       top: 0;
       left: 0;
@@ -428,18 +436,18 @@ img {
       opacity: 0;
     }
 
-    .checkbox:checked + .checkbox-icon-checked {
+    .checkbox__input:checked + .checkbox__icon-checked {
       opacity:1;
     }
-    .checkbox-icon-checked {
+    .checkbox__icon-checked {
       display: inline-block;
       position: absolute;
       top: 0;
       left: 0;
       width: 100%;
       height: 100%;
-      background-color: var(--background-color-hover);
-      color: white;
+      background-color: var(--modal-color-hover);
+      color: var(--checkbox__icon-checked);
       fill: currentColor;
       background-clip: border-box;
       border-radius: 2px;
@@ -448,27 +456,27 @@ img {
       transition: opacity 250ms var(--transition-timing);
     }
 
-    .checkbox-icon-unchecked {
+    .checkbox__icon-unchecked {
       position: absolute;
       top: 0;
       left: 0;
       width: 100%;
       height: 100%;
-      border: 2px solid rgba(33, 33, 33, 1);
+      border: 2px solid var(--checkbox__icon-unchecked-border-color);
       border-radius: 2px;
       transition: border-color 250ms var(--transition-timing);
     }
 
-    .checkbox-label {
+    .checkbox__label {
       cursor: pointer;
     }
 
-    .checkbox-labe-link {
-      color: rgba(33, 150, 243, 1);
+    .checkbox__labe-link {
+      color: var(--modal-color-hover);
       text-decoration: underline;
     }
 
-    .form-button-submit {
+    .form__button-submit {
       padding: 10px 55px;
       min-width: 200px;
       font-weight: 700;
@@ -476,17 +484,17 @@ img {
       line-height: 1.87;
       letter-spacing: 0.06em;
       cursor: pointer;
-      color: rgba(255, 255, 255, 1);
-      background: var(--background-color-hover);
+      color: var(--primary-background-color);
+      background: var(--modal-color-hover);
       border: 0;
       border-radius: 4px;
       box-shadow: 0px 4px 4px rgb(0 0 0 / 15%);
       transition: background-color 250ms var(--transition-timing);
     }
 
-    .form-button-submit:hover,
-    .form-button-submit:focus {
-      background-color: rgba(24, 140, 232, 1);
+    .form__button-submit:hover,
+    .form__button-submit:focus {
+      background-color: var(--form__button-submit-color-hover)
       ;
     }
 /* Наші переваги */
@@ -507,8 +515,7 @@ img {
 ==Приховування==  
 ================
 */
-.preference__title,
-.examples__title {
+.visually-hidden {
   position: absolute; 
   width: 1px; 
   height: 1px; 
@@ -526,7 +533,6 @@ img {
 .preference__item:not(:last-child) {
  margin-right: 30px;
 }
-
 
 .preference__icon {
   display: flex;
@@ -600,7 +606,7 @@ img {
 
 .title-general {
   margin-bottom: 50px;
-  color: var(--title-general-text-color);
+  color: var(--title-text-color);
   font-weight: 700;
   font-size: 36px;
   line-height: 1.16;
@@ -720,7 +726,7 @@ img {
 
 .logo--footer {
   margin-bottom: 20px;
-  color: var(--footer-logo-color);
+  color: var(--logo--footer-color);
 }
 
 .footer__cotacts {
@@ -832,19 +838,19 @@ img {
 
 /* Портфоліо */
 
-.examples-section { 
+.examples { 
   padding-top: 94px;
   padding-bottom: 94px;
 }
-.examples-button-list {
+.examples__button-list {
   display: flex;
   justify-content:center;
   margin-bottom: 50px;
 }
-.examples-button-list li:not(:last-child) {
+.examples__button-item:not(:last-child) {
     margin-right: 8px;
 }
-.examples-button {
+.examples__button {
   padding: 6px 22px;
   border: transparent;
   border-radius: 4px;
@@ -853,26 +859,75 @@ img {
   font-size: 16px;
   line-height: 1.62;
   letter-spacing: 0.03em;
-  background-color: var(--examples-button-background-color);
+  background-color: var(--examples__button-background-color);
   transition: background-color 250ms var(--transition-timing),color 250ms var(--transition-timing), box-shadow 250ms var(--transition-timing)
 }
 
-.examples-button:hover,
-.examples-button:focus {
+.examples__button:hover,
+.examples__button:focus {
   box-shadow: 0px 3px 1px rgb(0 0 0 / 10%), 0px 1px 2px rgb(0 0 0 / 8%), 0px 2px 2px rgb(0 0 0 / 12%);
 }
 
-.examples-list {
+.examples__list {
   display: flex;
   flex-wrap: wrap;
 }
-.examples-text-box {
-  padding: 20px 24px;
-  border-left: 1px solid var(--examples-border);
-  border-right: 1px solid var(--examples-border);
-  border-bottom: 1px solid var(--examples-border);
+.examples__item{
+  width: 370px;
 }
-.examples-title {
+
+.examples__item:not(:nth-child(3n)) {
+  margin-right: 30px;
+}
+.examples__item:not(:nth-last-child(-n + 3)) {
+  margin-bottom: 30px;
+}
+
+.examples__link {
+  display: block;
+  text-decoration: none;
+  transition: box-shadow 250ms var(--transition-timing);
+}
+
+.examples__link:hover,
+.examples__link:focus {
+  box-shadow: 0px 1px 1px rgb(0 0 0 / 12%), 0px 4px 4px rgb(0 0 0 / 6%), 1px 4px 6px rgb(0 0 0 / 16%);
+}
+
+.examples__image-box {
+  position: relative;
+  overflow: hidden;
+}
+
+.examples__second-laer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 63px 24px;
+  background-color: var(--examples__second-laer-background-color);
+  opacity: 0;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.55;
+  letter-spacing: 0.03em;
+  color: var(--examples__second-laer-color);
+  transform: translateY(100%);
+  transition: transform 250ms var(--transition-timing), opacity 250ms var(--transition-timing);
+}
+
+.examples__link:hover .examples__second-laer,
+.examples__link:focus .examples__second-laer  {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.examples__text-box {
+  padding: 20px 24px;
+  border-left: 1px solid var(--examples__text-box-border);
+  border-right: 1px solid var(--examples__text-box-border);
+  border-bottom: 1px solid var(--examples__text-box-border);
+}
+.examples__text-box-title {
   margin-bottom: 4px;
   font-weight: 700;
   font-size: 18px;
@@ -882,56 +937,10 @@ img {
   color: var(--title-text-color);
 }
 
-.examples-text {
+.examples__text-box-text {
   font-size: 16px;
   line-height: 1.87;
   letter-spacing: 0.03em;
   text-decoration: none;
   color: var(--primary-tex-color);
-}
-.examples-box{
-  width: 370px;
-}
-
-.examples-link:hover,
-.examples-link:focus {
-  box-shadow: 0px 1px 1px rgb(0 0 0 / 12%), 0px 4px 4px rgb(0 0 0 / 6%), 1px 4px 6px rgb(0 0 0 / 16%);
-}
-.examples-box:not(:nth-child(3n)) {
-  margin-right: 30px;
-}
-.examples-box:not(:nth-last-child(-n + 3)) {
-  margin-bottom: 30px;
-}
-.examples-link {
-  display: block;
-  text-decoration: none;
-  transition: box-shadow 250ms var(--transition-timing);
-}
-
-.examples-two-laer {
-  position: relative;
-  overflow: hidden;
-}
-
-.examples-second-laer {
-  position: absolute;
-  top: 0;
-  left: 0;
-  padding: 63px 24px;
-  background-color: var(--examples-second-laer-background-color);
-  opacity: 0;
-  font-size: 18px;
-  font-weight: 400;
-  line-height: 1.55;
-  letter-spacing: 0.03em;
-  color: var(--examples-second-laer-color);
-  transform: translateY(100%);
-  transition: transform 250ms var(--transition-timing), opacity 250ms var(--transition-timing);
-}
-
-.examples-link:hover .examples-second-laer,
-.examples-link:focus .examples-second-laer  {
-  opacity: 1;
-  transform: translateY(0);
 }
